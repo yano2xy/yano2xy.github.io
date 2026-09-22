@@ -1,0 +1,298 @@
+/*
+  yano2xy.github.io 共通スタイル
+  - 外部フォント・外部リソースは使用しない（システムフォントのみ）
+  - レスポンシブ対応・基本的なアクセシビリティ（コントラスト、フォーカス表示、文字サイズ）に配慮
+*/
+
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f6f8;
+  --color-text: #1a1a1a;
+  --color-text-muted: #4b5563;
+  --color-border: #d7dce1;
+  --color-link: #0b5fae;
+  --color-link-visited: #5a3d99;
+  --color-accent: #0b5fae;
+  --color-focus: #d6440c;
+  --color-notice-bg: #fff6e5;
+  --color-notice-border: #e0a339;
+  --max-width: 48rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #14171a;
+    --color-bg-alt: #1d2226;
+    --color-text: #f2f3f5;
+    --color-text-muted: #c2c8cf;
+    --color-border: #3a4147;
+    --color-link: #7cb8ff;
+    --color-link-visited: #c6a6ff;
+    --color-accent: #7cb8ff;
+    --color-focus: #ffb35a;
+    --color-notice-bg: #332a14;
+    --color-notice-border: #b8862f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Segoe UI", Roboto, Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 0.75em 1em;
+  border: 2px solid var(--color-accent);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0.5em;
+  top: 0.5em;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.site-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-title:visited {
+  color: var(--color-text);
+}
+
+.global-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.global-nav a {
+  text-decoration: none;
+}
+
+.global-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.app-nav {
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0.75rem 0;
+}
+
+.app-nav a {
+  text-decoration: none;
+}
+
+.app-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem 0 3rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 2rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+
+.lead {
+  color: var(--color-text-muted);
+}
+
+.app-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.app-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  background: var(--color-bg-alt);
+}
+
+.app-card h2 {
+  margin-top: 0;
+}
+
+.app-card .app-card-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.6em 1.1em;
+  border: 2px solid var(--color-accent);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link-list {
+  padding-left: 1.25rem;
+}
+
+.link-list li {
+  margin-bottom: 0.5rem;
+}
+
+.notice {
+  background: var(--color-notice-bg);
+  border: 1px solid var(--color-notice-border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.notice strong {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.placeholder {
+  font-weight: 700;
+}
+
+dl.faq dt {
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+dl.faq dd {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+}
+
+caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--color-bg-alt);
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.not-found {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.not-found h1 {
+  font-size: 2rem;
+}
