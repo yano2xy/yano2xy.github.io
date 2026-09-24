@@ -199,23 +199,6 @@
   font-size: 0.95rem;
 }
 
-.feature-examples {
-  margin: 0.75rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.feature-examples li {
-  font-size: 0.8rem;
-  color: var(--stc-brown);
-  background: var(--stc-cover);
-  border-radius: 999px;
-  padding: 0.2em 0.7em;
-}
-
 /* ============ 画面イメージ（実機SSではなく、配色・実データに沿った再現イメージ） ============ */
 .showcase-grid {
   display: grid;
