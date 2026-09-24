@@ -21,8 +21,16 @@ yano2xy.github.io/
         ├── index.html                # アプリ案内ページ
         ├── privacy/
         │   └── index.html            # プライバシーポリシー
-        └── support/
-            └── index.html            # サポートページ
+        ├── support/
+        │   └── index.html            # サポートページ
+        └── assets/
+            ├── app.css                # このアプリ専用のスタイル（common.cssに追加で読み込む）
+            └── brand/                 # mealquest/docs/0_企画/logo_kit から複製した公式ロゴ素材
+                ├── logo-horizontal.svg
+                ├── logo-horizontal-reverse.svg
+                ├── symbol.svg
+                ├── favicon.svg / favicon.png
+                └── app-icon.png
 ```
 
 ## 公開URL

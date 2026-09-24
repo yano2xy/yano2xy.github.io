@@ -1,0 +1,495 @@
+/*
+  食卓帖（shokutakucho）ページ専用スタイル。
+  common.css の上に重ねて使う。他アプリには影響しない（このディレクトリ配下でのみ読み込む）。
+  ロゴキット（mealquest/docs/0_企画/logo_kit）の配色に合わせる。ダークモードの指定は
+  ロゴ側に存在しないため、ブランド帯（hero / page-hero / concept）は常にライト配色で固定する。
+*/
+
+:root {
+  --stc-green: #29432f;
+  --stc-green-deep: #1c2f21;
+  --stc-gold: #e3b957;
+  --stc-brown: #8b6c29;
+  --stc-brown-soft: #ab9361;
+  --stc-cream: #fff9f0;
+  --stc-cover: #f3e7d4;
+  --stc-line: #ece2d0;
+}
+
+/* 和文の見出し・引用はロゴと同じ明朝系を優先し、無ければ通常の本文書体に落ちる
+   （外部フォント読み込みはしない。OS標準で入っていれば使われるだけ） */
+.stc-serif {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* ============ ページ共通の小さいブランド帯（privacy / support） ============ */
+.page-hero {
+  background: var(--stc-cream);
+  border-bottom: 1px solid var(--stc-line);
+}
+
+.page-hero .wrap {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-hero-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.page-hero h1 {
+  color: var(--stc-green);
+  margin: 0;
+}
+
+.page-hero .lead {
+  color: var(--stc-brown);
+  margin: 0.4rem 0 0;
+}
+
+/* ============ トップページ：ヒーロー ============ */
+.hero {
+  background: var(--stc-cream);
+  border-bottom: 1px solid var(--stc-line);
+}
+
+.hero .wrap {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.hero-logo {
+  height: 52px;
+  width: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.hero-tagline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--stc-green);
+  margin: 0 0 0.75rem;
+}
+
+.hero-message {
+  color: var(--stc-brown);
+  font-size: 1.05rem;
+  margin: 0 auto 1.5rem;
+  max-width: 32rem;
+}
+
+.hero-lead {
+  /* --color-text は common.css 側でダークモード時に反転する（システム設定の
+     ダークモードで白に近づく）が、hero は常に明るいブランド配色で固定しているため、
+     反転しない固定色を使う。common.css の var(--color-text) を使うとダークモード時に
+     クリーム背景へ白文字が乗って読めなくなる。 */
+  color: #33291a;
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+  font-size: 1.05rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.hero-cta .button-link {
+  border-color: var(--stc-green);
+  color: var(--stc-green);
+}
+
+.hero-cta .button-link.is-primary {
+  background: var(--stc-green);
+  color: #fff;
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--stc-brown);
+  background: var(--stc-cover);
+  border: 1px solid var(--stc-line);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+}
+
+/* ============ できること：機能カード ============ */
+.section-pad {
+  padding: 3rem 0;
+}
+
+.section-pad.alt {
+  background: var(--color-bg-alt);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+}
+
+.section-heading .eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--stc-brown);
+  margin-bottom: 0.5rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.5rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 40rem) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--stc-cover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--stc-green);
+  color: var(--stc-green);
+}
+
+.feature-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.feature-examples {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.feature-examples li {
+  font-size: 0.8rem;
+  color: var(--stc-brown);
+  background: var(--stc-cover);
+  border-radius: 999px;
+  padding: 0.2em 0.7em;
+}
+
+/* ============ 画面イメージ（実機SSではなく、配色・実データに沿った再現イメージ） ============ */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 48rem) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+}
+
+.showcase-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+.mock-frame {
+  border: 1px solid var(--stc-line);
+  border-radius: 20px;
+  padding: 0.6rem;
+  background: #fff;
+  box-shadow: 0 12px 24px -12px rgba(41, 67, 47, 0.25);
+}
+
+.mock-screen {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--stc-cream);
+  min-height: 20rem;
+  padding: 1rem 0.9rem;
+}
+
+.mock-screen.is-dark {
+  background: var(--stc-green);
+}
+
+.mock-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--stc-brown);
+  margin: 0 0 0.75rem;
+}
+
+.mock-screen.is-dark .mock-title {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- ホーム画面イメージ --- */
+.mock-slots {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mock-slot {
+  flex: 1;
+  text-align: center;
+}
+
+.mock-slot-plate {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: 0 auto 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px dashed var(--stc-line);
+}
+
+.mock-slot.is-recorded .mock-slot-plate {
+  border-style: solid;
+  border-color: var(--stc-cover);
+  background: var(--stc-cover);
+}
+
+.mock-slot-plate svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--stc-brown-soft);
+}
+
+.mock-slot.is-recorded .mock-slot-plate svg {
+  stroke: none;
+  fill: var(--stc-green);
+}
+
+.mock-slot-label {
+  font-size: 0.7rem;
+  color: var(--stc-brown-soft);
+}
+
+.mock-meal-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.mock-meal-row .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--stc-gold);
+  flex-shrink: 0;
+}
+
+.mock-meal-row .txt {
+  font-size: 0.78rem;
+  color: var(--stc-green);
+  line-height: 1.3;
+}
+
+.mock-meal-row .txt span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--stc-brown-soft);
+}
+
+/* --- トロフィー解除イメージ --- */
+.mock-unlock {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.mock-unlock-badge {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: radial-gradient(circle at 50% 35%, rgba(227, 185, 87, 0.35), rgba(227, 185, 87, 0) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-unlock-badge img {
+  width: 48px;
+  height: 48px;
+}
+
+.mock-unlock-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--stc-gold);
+  margin: 0 0 0.35rem;
+}
+
+.mock-unlock-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+
+.mock-unlock-desc {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+/* --- パック進捗イメージ --- */
+.mock-pack-row {
+  margin-bottom: 0.9rem;
+}
+
+.mock-pack-row .top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--stc-green);
+  margin-bottom: 0.3rem;
+}
+
+.mock-pack-row .top span:last-child {
+  color: var(--stc-brown-soft);
+}
+
+.mock-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--stc-line);
+  overflow: hidden;
+}
+
+.mock-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--stc-gold);
+  border-radius: 999px;
+}
+
+/* ============ コンセプト（濃色帯） ============ */
+.section-concept {
+  background: var(--stc-green);
+  color: rgba(255, 255, 255, 0.88);
+  padding: 3.5rem 0;
+}
+
+.section-concept .wrap {
+  max-width: 40rem;
+  text-align: center;
+}
+
+.section-concept .brand-message {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0 0 1.25rem;
+}
+
+.section-concept p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.section-concept .not-list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.section-concept .not-list li {
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============ こんな人におすすめ ============ */
+.audience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.audience-list li {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  color: var(--color-text);
+}
+
+.audience-list svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  stroke: var(--stc-green);
+  margin-top: 0.15rem;
+}
+
+/* ============ 最後のCTA ============ */
+.section-final {
+  text-align: center;
+}
+
+.section-final .button-link {
+  border-color: var(--stc-green);
+  color: var(--stc-green);
+}
