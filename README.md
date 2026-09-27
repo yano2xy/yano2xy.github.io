@@ -17,20 +17,30 @@ yano2xy.github.io/
 ├── assets/
 │   └── common.css                   # 全ページ共通スタイル
 └── apps/
-    └── shokutakucho/
-        ├── index.html                # アプリ案内ページ
-        ├── privacy/
-        │   └── index.html            # プライバシーポリシー
-        ├── support/
-        │   └── index.html            # サポートページ
+    ├── shokutakucho/
+    │   ├── index.html                # アプリ案内ページ
+    │   ├── privacy/
+    │   │   └── index.html            # プライバシーポリシー
+    │   ├── support/
+    │   │   └── index.html            # サポートページ
+    │   └── assets/
+    │       ├── app.css                # このアプリ専用のスタイル（common.cssに追加で読み込む）
+    │       └── brand/                 # mealquest/docs/0_企画/logo_kit から複製した公式ロゴ素材
+    │           ├── logo-horizontal.svg
+    │           ├── logo-horizontal-reverse.svg
+    │           ├── symbol.svg
+    │           ├── favicon.svg / favicon.png
+    │           └── app-icon.png
+    └── salvage/                      # 英語が既定、日本語は ja/ 配下（アプリの言語に合わせて開く）
+        ├── privacy/index.html         # プライバシーポリシー（英語）
+        ├── support/index.html         # サポートページ（英語）
+        ├── ja/
+        │   ├── privacy/index.html     # プライバシーポリシー（日本語）
+        │   └── support/index.html     # サポートページ（日本語）
         └── assets/
             ├── app.css                # このアプリ専用のスタイル（common.cssに追加で読み込む）
-            └── brand/                 # mealquest/docs/0_企画/logo_kit から複製した公式ロゴ素材
-                ├── logo-horizontal.svg
-                ├── logo-horizontal-reverse.svg
-                ├── symbol.svg
-                ├── favicon.svg / favicon.png
-                └── app-icon.png
+            ├── app-icon.png           # アプリアイコン（180px）
+            └── favicon.png
 ```
 
 ## 公開URL
@@ -41,6 +51,10 @@ yano2xy.github.io/
 | shokutakucho 案内ページ | https://yano2xy.github.io/apps/shokutakucho/ |
 | shokutakucho プライバシーポリシー | https://yano2xy.github.io/apps/shokutakucho/privacy/ |
 | shokutakucho サポート | https://yano2xy.github.io/apps/shokutakucho/support/ |
+| SALVAGE プライバシーポリシー（英語） | https://yano2xy.github.io/apps/salvage/privacy/ |
+| SALVAGE サポート（英語） | https://yano2xy.github.io/apps/salvage/support/ |
+| SALVAGE プライバシーポリシー（日本語） | https://yano2xy.github.io/apps/salvage/ja/privacy/ |
+| SALVAGE サポート（日本語） | https://yano2xy.github.io/apps/salvage/ja/support/ |
 | 404ページ | https://yano2xy.github.io/404.html |
 
 ## 新しいアプリを追加する手順

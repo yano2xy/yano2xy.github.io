@@ -1,0 +1,64 @@
+/*
+  SALVAGE ページ専用スタイル。
+  common.css の上に重ねて使う。他アプリには影響しない（このディレクトリ配下でのみ読み込む）。
+  アプリの Home に合わせ、ライトは canvas と墨、ダークは Home の地の色と暖かい白にする。
+*/
+
+:root {
+  --slv-ground: #f7f5f0;
+  --slv-line: #ece8e0;
+  --slv-ink: #292d29;
+  --slv-ink2: #6e706a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --slv-ground: #131416;
+    --slv-line: #2f2d29;
+    --slv-ink: #f1e9dd;
+    --slv-ink2: #bcae9b;
+  }
+}
+
+/* ============ ページ上部の帯（privacy / support） ============ */
+.page-hero {
+  background: var(--slv-ground);
+  border-bottom: 1px solid var(--slv-line);
+}
+
+.page-hero .wrap {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-hero-app {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--slv-ink);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.page-hero-app img {
+  width: 44px;
+  height: 44px;
+  border-radius: 22.5%;
+  display: block;
+}
+
+.page-hero h1 {
+  color: var(--slv-ink);
+  margin: 0;
+}
+
+.page-hero .lead {
+  color: var(--slv-ink2);
+  margin: 0.4rem 0 0;
+}
+
+/* 言語の切り替えは、ページ内ナビの右端に置く */
+.app-nav .lang {
+  margin-left: auto;
+}
