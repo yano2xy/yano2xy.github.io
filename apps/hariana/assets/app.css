@@ -1,0 +1,55 @@
+/*
+  針穴（hariana）ページ専用スタイル。
+  common.css の上に重ねて使う。他アプリには影響しない（このディレクトリ配下でのみ読み込む）。
+  アプリのデザインシステム（leftrightgame/src/ui/theme.ts）の配色に合わせる。
+  ブランド帯（page-hero）は、ライト・ダークどちらでもアプリと同じ濃い緑で固定する。
+*/
+
+:root {
+  --hrn-bg: #0b1712;
+  --hrn-line: #294a35;
+  --hrn-thread: #e5f7b8;
+  --hrn-text-sub: #b8c8ad;
+}
+
+/* ============ ページ上部のブランド帯（privacy / support） ============ */
+.page-hero {
+  background: var(--hrn-bg);
+  border-bottom: 1px solid var(--hrn-line);
+}
+
+.page-hero .wrap {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.page-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.page-hero-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  display: block;
+}
+
+.page-hero-brand span {
+  color: var(--hrn-thread);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+}
+
+.page-hero h1 {
+  color: var(--hrn-thread);
+  margin: 0;
+}
+
+.page-hero .lead {
+  color: var(--hrn-text-sub);
+  margin: 0.4rem 0 0;
+}
